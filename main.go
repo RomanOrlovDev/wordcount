@@ -1,24 +1,16 @@
 package main
 
-import (
-	"bufio"
+import  (
 	"fmt"
 	"github.com/RomanOrlovDev/wordcount/utility"
 	"os"
 )
 
-func readScanner() (error, string){
-	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan()
-	return scanner.Err(), scanner.Text()
+func readScanner() string{
+	return os.Args[1]
 }
 
 func main(){
-
-	err, ret := readScanner()
-	if err != nil {
-		panic("Bad")
-	}
-
+	ret := readScanner()
 	fmt.Println(utility.Count(ret))
 }
